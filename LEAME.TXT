@@ -1,0 +1,100 @@
+#******************************#
+#******************************#
+    1. crear proyecto 
+    npx create -react-app front_siu --template=typescript
+    npx create-react-app front_arriendos_react --template typescript
+
+    npx create-react-app front_crud --template typescript
+
+
+
+
+#******************************#
+#******************************#
+    2. Cargar los recursos_platinlla.zip en src
+#******************************#    
+#******************************#
+    3. Definir la estructura 
+
+    md src/app
+    md src/assets
+    md src/app/public
+    md src/app/private
+    md src/app/shared
+
+
+    md src/assets/img
+    md src/assets/css
+
+    md src/models
+    md src/services
+    md src/routes
+    md src/utilities
+
+    md src/utilities/dominios
+    md src/utilities/funciones
+    md src/utilities/misHoks
+    
+
+
+#******************************#
+
+    4. INSTALACION LIBRERIAS
+
+    npm i bootstrap
+    npm i @fortawesome/fontawesome-free
+    npm i react-router-dom
+    npm i react-bootstrap
+    npm i react-toastify
+    npm i react-datetime
+    npm i sass
+    npm i jssha
+    npm i jwt-decode
+    
+#******************************#
+#******************************#
+    5. CARGAR CSS Y JS EN EL INDEX.TSX
+
+    import 'bootstrap/dist/css/bootstrap.min.css'
+    import '@fortawesome/fontawesome-free/css/all.min.css'
+    import 'react-toastify/dist/react-toastify.css'
+    import 'bootstrap/dist/js/bootstrap.bundle.js'
+
+    import 'scss/volt.scss';
+
+    npm i simplebar-react
+
+    o también este
+
+    import 'bootstrap/dist/css/bootstrap.min.css'
+    import '@fortawesome/fontawesome-free/css/all.min.css'
+    import 'react-toastify/dist/ReactToastify.css'
+    import 'bootstrap/dist/js/bootstrap.bundle.js'
+    import './scss/volt.scss';
+    import 'react-datepicker/dist/react-datepicker.module.css'
+    import 'react-datepicker/dist/react-datepicker.css';
+
+    import "react-datepicker/dist/react-datepicker.css"; 
+
+
+#******************************#
+    6. LIMPIA LOS ARCHIVOS INDEX.CSS y APP.CSS
+#******************************#
+#******************************#
+    7. ESTRUCTURA BASICA COMPONENTE APP.TSX
+#******************************#
+#******************************#
+#******************************#
+    8. CARGAR EL RECURSO 01_formulario_sesion en componente 01_formulario_sesion
+    
+#******************************#
+
+npm start
+#******************************#
+#******************************#
+#******************************#
+#******************************#
+#******************************#
+#******************************#
+#******************************#
+#******************************#
