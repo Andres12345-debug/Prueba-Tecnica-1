@@ -10,7 +10,7 @@ export const RegionesListar = () => {
         try {
             const urlServicio = URLS.API_URL + URLS.REGIONES;
             const resultado = await ServicioGet.peticionGetPublica(urlServicio);
-            
+
             console.log("Respuesta de la API:", resultado); // Verificar formato
 
             if (Array.isArray(resultado)) {
@@ -43,8 +43,9 @@ export const RegionesListar = () => {
                         <tr key={region.id}>
                             <td>{region.id}</td>
                             <td>{region.name}</td>
-                            <td>{region.desription}</td>
+                            <td>{region.description}</td> {/* Corrección aquí */}
                         </tr>
+
                     ))
                 ) : (
                     <tr>
