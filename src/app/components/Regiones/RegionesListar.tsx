@@ -47,7 +47,7 @@ export const RegionesListar = () => {
                     {arrRegiones.length > 0 ? (
                         arrRegiones.map((region, index) => (
                             <div className="col-md-4" key={index}>
-                                <div className="card shadow-sm bg-dark-subtle" 
+                                <div className="card shadow-sm bg-secondary-subtle" 
                                     style={{ cursor: "pointer" }}
                                     onClick={() => handleShowModal(region)}
                                     onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.02)")}
@@ -57,7 +57,7 @@ export const RegionesListar = () => {
                                         {region.name && <p>{region.name}</p>} {/* Asegura que haya contenido en la imagen */}
                                     </div>
                                     <div className="card-body">
-                                        <p className="card-text fw-bold">{region.name}</p>                                        
+                                        <p className="card-text fw-bold textosAzul">{region.name}</p>                                        
                                         <p className="card-text">{region.description}</p>
                                     </div>
                                 </div>
@@ -79,8 +79,6 @@ export const RegionesListar = () => {
                 <Modal.Body>
                     <div className="d-flex flex-column flex-md-row align-items-start">
                         <div className="mt-3" style={{ flex: 1 }}>
-                            <h5 className="fw-bold mb-3">ID: {selectedRegion?.id}</h5>
-                            <p className="mb-2"><strong>Nombre:</strong> {selectedRegion?.name}</p>
                             {selectedRegion?.description && (
                                 <p className="mb-2"><strong>Descripción:</strong> {selectedRegion.description}</p>
                             )}

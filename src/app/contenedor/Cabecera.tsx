@@ -5,7 +5,7 @@ export const Cabecera = () => {
     <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <svg className="bi me-2" width="40" height="32"></svg>
-        <span className="fs-4 textosAmarillo fw-bold">N<span className="textosAzul">ues</span><span className="textosRojos">tra </span><span className="textosRojos"><span className="textosAmarillo">Col</span><span className="textosAzul">om</span><span className="textoRojo">bia</span></span></span>
+        <span className="fs-4 textosAmarillo fw-bold jump">N<span className="textosAzul">ues</span><span className="textosRojos">tra </span><span className="textosRojos"><span className="textosAmarillo">Col</span><span className="textosAzul">om</span><span className="textoRojo">bia</span></span></span>
       </a>
 
       <ul className="nav nav-pills">

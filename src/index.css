@@ -1,3 +1,133 @@
+/* Animación de salto */
+@keyframes jump {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .jump {
+    animation: jump 1s infinite;
+  }
+  
+  /* Animación de giro */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .spin {
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Animación de desvanecimiento */
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .fade {
+    animation: fade 1s ease-in-out;
+  }
+  
+  /* Animación de escalado */
+  @keyframes scale {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  .scale {
+    animation: scale 1s infinite;
+  }
+  
+  /* Animación de deslizamiento hacia la derecha */
+  @keyframes slide-right {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .slide-right {
+    animation: slide-right 1s ease-out;
+  }
+  
+  /* Animación de deslizamiento hacia la izquierda */
+  @keyframes slide-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .slide-left {
+    animation: slide-left 1s ease-out;
+  }
+  
+  /* Animación de deslizamiento hacia arriba */
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .slide-up {
+    animation: slide-up 1s ease-out;
+  }
+  
+  /* Animación de deslizamiento hacia abajo */
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .slide-down {
+    animation: slide-down 1s ease-out;
+  }
+  
+  /* Animación de parpadeo */
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  .blink {
+    animation: blink 1s infinite;
+  }
+  
+
 .textosAmarillo{
     color: rgb(240, 201, 4);
 }
