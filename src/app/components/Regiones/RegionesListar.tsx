@@ -40,34 +40,35 @@ export const RegionesListar = () => {
 
     return (
         <>
-            <div className="row">
-                {arrRegiones.length > 0 ? (
-                    arrRegiones.map((region, index) => (
-                        <div className="col-lg-4" key={region.id || index}>
-                            <svg
-                                className="bd-placeholder-img rounded-circle"
-                                width="140"
-                                height="140"
-                                xmlns="http://www.w3.org/2000/svg"
-                                role="img"
-                                aria-label="Placeholder"
-                                preserveAspectRatio="xMidYMid slice"
-                                focusable="false"
-                            >
-                                <title>Placeholder</title>
-                                <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
-                            </svg>
-                            <p>{region.name}</p>
-                            <p>
-                                <Button variant="secondary" onClick={() => handleShowModal(region)}>
-                                    Ver detalles »
-                                </Button>
-                            </p>
+            <div className="container mt-5">
+                {/* Publicaciones estilo Instagram */}
+                <div className="container mt-4"></div>
+                <div className="row gy-4">
+                    {arrRegiones.length > 0 ? (
+                        arrRegiones.map((region, index) => (
+                            <div className="col-md-4" key={index}>
+                                <div className="card shadow-sm bg-dark-subtle" 
+                                    style={{ cursor: "pointer" }}
+                                    onClick={() => handleShowModal(region)}
+                                    onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.02)")}
+                                    onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                                >
+                                    <div className="card-img-top p-3" style={{ height: "200px", overflow: "hidden" }}>
+                                        {region.name && <p>{region.name}</p>} {/* Asegura que haya contenido en la imagen */}
+                                    </div>
+                                    <div className="card-body">
+                                        <p className="card-text fw-bold">{region.name}</p>                                        
+                                        <p className="card-text">{region.description}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        <div className="col-12 text-center">
+                            <p className="text-muted">No hay regiones disponibles en este momento.</p>
                         </div>
-                    ))
-                ) : (
-                    <p>No hay regiones disponibles.</p>
-                )}
+                    )}
+                </div>
             </div>
 
             {/* Modal para mostrar los detalles de la región */}
