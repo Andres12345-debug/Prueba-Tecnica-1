@@ -40,6 +40,7 @@ export const RegionesListar = () => {
 
     return (
         <>
+        <h1>Alo</h1>
             <div className="container mt-5">
                 {/* Publicaciones estilo Instagram */}
                 <div className="container mt-4"></div>
@@ -80,7 +81,7 @@ export const RegionesListar = () => {
                     <div className="d-flex flex-column flex-md-row align-items-start">
                         <div className="mt-3" style={{ flex: 1 }}>
                             {selectedRegion?.description && (
-                                <p className="mb-2"><strong>Descripción:</strong> {selectedRegion.description}</p>
+                                <p className="mb-2"><strong>Descripción:</strong> {selectedRegion.description}</p>                                
                             )}
                         </div>
                     </div>
