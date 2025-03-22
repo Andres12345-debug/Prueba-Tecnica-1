@@ -40,7 +40,6 @@ export const RegionesListar = () => {
 
     return (
         <>
-        <h1>Alo</h1>
             <div className="container mt-5">
                 {/* Publicaciones estilo Instagram */}
                 <div className="container mt-4"></div>
