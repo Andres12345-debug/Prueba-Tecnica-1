@@ -29,30 +29,38 @@ export const RegionesListar = () => {
     }, []);
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                </tr>
-            </thead>
-            <tbody>
-                {arrRegiones.length > 0 ? (
-                    arrRegiones.map((region) => (
-                        <tr key={region.id}>
-                            <td>{region.id}</td>
-                            <td>{region.name}</td>
-                            <td>{region.description}</td> {/* Corrección aquí */}
-                        </tr>
+        <div className="row">
+            {arrRegiones.length > 0 ? (
+                arrRegiones.map((region) => (
+                    <div className="col-lg-4" key={region.id}>
+                        <svg
+                            className="bd-placeholder-img rounded-circle"
+                            width="140"
+                            height="140"
+                            xmlns="http://www.w3.org/2000/svg"
+                            role="img"
+                            aria-label="Placeholder"
+                            preserveAspectRatio="xMidYMid slice"
+                            focusable="false"
+                        >
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                        </svg>
+                        <h2 className="fw-normal">{region.id}</h2>
+                        <p>{region.description}</p>
+                        <p>
+                            <a className="btn btn-secondary" href="#">
+                                View details »
+                            </a>
+                        </p>
+                    </div>
+                ))
+            ) : (
+                <p>No hay regiones disponibles.</p>
+            )}
+        </div>
 
-                    ))
-                ) : (
-                    <tr>
-                        <td colSpan={3}>No hay regiones disponibles</td>
-                    </tr>
-                )}
-            </tbody>
-        </table>
+
+
     );
 };
