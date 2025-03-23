@@ -41,6 +41,7 @@ export const RegionesListar = () => {
     return (
         <>
             <div className="container mt-5">
+            <h3 className="mb-4 text-center"><span className="textosAmarillo">Re<span className="textosAzul">gio</span><span className="textosRojos">nes</span></span></h3>                
                 {/* Publicaciones estilo Instagram */}
                 <div className="container mt-4"></div>
                 <div className="row gy-4">
