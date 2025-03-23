@@ -42,7 +42,7 @@ export const Sitiosistar = () => {
     // Navegar a la siguiente slide
     const handleNext = () => {
         if (arrSitios.length <= 3) return;
-        setCurrentIndex(prevIndex => 
+        setCurrentIndex(prevIndex =>
             prevIndex + 3 >= arrSitios.length ? 0 : prevIndex + 3
         );
     };
@@ -50,7 +50,7 @@ export const Sitiosistar = () => {
     // Navegar a la slide anterior
     const handlePrev = () => {
         if (arrSitios.length <= 3) return;
-        setCurrentIndex(prevIndex => 
+        setCurrentIndex(prevIndex =>
             prevIndex - 3 < 0 ? Math.floor((arrSitios.length - 1) / 3) * 3 : prevIndex - 3
         );
     };
@@ -67,7 +67,9 @@ export const Sitiosistar = () => {
     return (
         <>
             <div className="container">
-                <h3 className="mb-4 text-center"><span className="textosAmarillo">Sitios </span><span className="textosAzul">Des</span ><span className="textosRojos">tacados</span></h3>                
+                <h1 className="mb-4 border-bottom border-danger pb-2 fs-2 textosRojos text-center">
+                    Viaja por Colombia
+                </h1>
                 {arrSitios.length > 0 ? (
                     <div className="position-relative">
                         {/* Controles del slider */}
@@ -76,9 +78,9 @@ export const Sitiosistar = () => {
                                 <button
                                     className="btn btn-primary rounded-circle position-absolute"
                                     onClick={handlePrev}
-                                    style={{ 
-                                        left: "-20px", 
-                                        top: "50%", 
+                                    style={{
+                                        left: "-20px",
+                                        top: "50%",
                                         transform: "translateY(-50%)",
                                         zIndex: 10,
                                         width: "40px",
@@ -93,9 +95,9 @@ export const Sitiosistar = () => {
                                 <button
                                     className="btn btn-primary rounded-circle position-absolute"
                                     onClick={handleNext}
-                                    style={{ 
-                                        right: "-20px", 
-                                        top: "50%", 
+                                    style={{
+                                        right: "-20px",
+                                        top: "50%",
                                         transform: "translateY(-50%)",
                                         zIndex: 10,
                                         width: "40px",
@@ -112,7 +114,7 @@ export const Sitiosistar = () => {
 
                         {/* Slider de sitios */}
                         <div className="slider-container overflow-hidden">
-                            <div 
+                            <div
                                 className="row gy-4"
                                 style={{
                                     transition: "transform 0.5s ease",
@@ -120,9 +122,9 @@ export const Sitiosistar = () => {
                             >
                                 {getVisibleSitios().map((sitios, index) => (
                                     <div className="col-md-4" key={currentIndex + index}>
-                                        <div 
-                                            className="card shadow-sm bg-secondary-subtle h-100" 
-                                            style={{ 
+                                        <div
+                                            className="card shadow-sm bg-secondary-subtle h-100"
+                                            style={{
                                                 cursor: "pointer",
                                                 transition: "transform 0.3s ease"
                                             }}
@@ -132,11 +134,11 @@ export const Sitiosistar = () => {
                                         >
                                             <div className="card-img-top p-3" style={{ height: "200px", overflow: "hidden" }}>
                                                 {sitios.images && sitios.images.length > 0 ? (
-                                                    <img 
-                                                        src={sitios.images[0]} 
-                                                        alt={sitios.name} 
-                                                        loading="lazy" 
-                                                        className="w-100 h-100 object-fit-cover" 
+                                                    <img
+                                                        src={sitios.images[0]}
+                                                        alt={sitios.name}
+                                                        loading="lazy"
+                                                        className="w-100 h-100 object-fit-cover"
                                                     />
                                                 ) : (
                                                     <div className="w-100 h-100 bg-light d-flex align-items-center justify-content-center">
@@ -145,8 +147,8 @@ export const Sitiosistar = () => {
                                                 )}
                                             </div>
                                             <div className="card-body">
-                                                <p className="card-text fw-bold textosAzul">{sitios.name}</p>
-                                               
+                                                <p className="lead fw-bold">{sitios.name}</p>
+                                                <p className="lead">{sitios.city?.name || "Ciudad desconocida"}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -188,16 +190,16 @@ export const Sitiosistar = () => {
                     <div className="d-flex flex-column flex-md-row align-items-start">
                         {selectedSitios?.images && selectedSitios.images.length > 0 && (
                             <div className="me-md-4 mb-3 mb-md-0" style={{ flex: "0 0 40%" }}>
-                                <img 
-                                    src={selectedSitios.images[0]} 
-                                    alt={selectedSitios.name} 
-                                    className="img-fluid rounded" 
+                                <img
+                                    src={selectedSitios.images[0]}
+                                    alt={selectedSitios.name}
+                                    className="img-fluid rounded"
                                 />
                             </div>
                         )}
                         <div style={{ flex: 1 }}>
                             {selectedSitios?.description && (
-                                <p className="mb-2"><strong>Descripción:</strong> {selectedSitios.description}</p>   
+                                <p className="mb-2"><strong>Descripción:</strong> {selectedSitios.description}</p>
                             )}
                         </div>
                     </div>

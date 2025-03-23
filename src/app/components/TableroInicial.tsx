@@ -10,8 +10,8 @@ export const TableroInicial =() => {
     return (
         <div>
             <Cabecera />
-            <div className="container py-5">
-                <Sitiosistar/>
+            <div className="container">
+            <ColombiaListar/>
             </div>
             <div className="container py-5">
                 <RegionesListar />

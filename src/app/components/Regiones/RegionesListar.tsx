@@ -41,7 +41,9 @@ export const RegionesListar = () => {
     return (
         <>
             <div className="container mt-5">
-            <h3 className="mb-4 text-center"><span className="textosAmarillo">Re<span className="textosAzul">gio</span><span className="textosRojos">nes</span></span></h3>                
+            <h1 className="mb-4 border-bottom border-warning pb-2 fs-2 textosAmarillo text-center">
+                    Regiones Colombianas
+                </h1>
                 {/* Publicaciones estilo Instagram */}
                 <div className="container mt-4"></div>
                 <div className="row gy-4">
@@ -54,9 +56,6 @@ export const RegionesListar = () => {
                                     onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.02)")}
                                     onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
                                 >
-                                    <div className="card-img-top p-3" style={{ height: "200px", overflow: "hidden" }}>
-                                        {region.name && <p>{region.name}</p>} {/* Asegura que haya contenido en la imagen */}
-                                    </div>
                                     <div className="card-body">
                                         <p className="card-text fw-bold textosAzul">{region.name}</p>                                        
                                         <p className="card-text">{region.description}</p>

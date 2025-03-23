@@ -13,106 +13,64 @@ export const ColombiaListar = () => {
     const consultar = async () => {
         try {
             const urlServicio = URLS.API_URL + URLS.COLOMBIA;
-            console.log("URL completa:", urlServicio); // Log para verificar la URL
-            
+            console.log("URL completa:", urlServicio);
+
             const resultado = await ServicioGet.peticionGetPublica(urlServicio);
-            console.log("Respuesta de la API:", resultado);
-            
-            if (resultado === null) {
-                console.error("La API devolvió null - posible error de red o servidor");
+            console.log("Resultado recibido:", resultado);
+
+            if (!resultado) {
+                console.error("Error: La API devolvió un valor nulo o indefinido");
                 setArrColombia([]);
                 return;
             }
-            
-            // Verificar si la API devuelve un array o un objeto
+
             if (Array.isArray(resultado)) {
                 setArrColombia(resultado);
+            } else if (typeof resultado === "object") {
+                setArrColombia([resultado]); // Envolver objeto en array si es necesario
             } else {
-                setArrColombia([resultado]);
+                console.error("Error: La API devolvió un tipo de dato inesperado", resultado);
+                setArrColombia([]);
             }
+
         } catch (error) {
-            console.error("Error al obtener regiones", error);
+            console.error("Error en la petición:", error);
             setArrColombia([]);
         }
     };
-    
 
     useEffect(() => {
         consultar();
     }, []);
 
-    // Mostrar modal con detalles de la selección
-    const handleShowModal = (colombia: Colombia) => {
-        setSelectedColombia(colombia);
-        setShowModal(true);
-    };
-
-    // Cerrar modal
-    const handleCloseModal = () => {
-        setShowModal(false);
-        setSelectedColombia(null);
-    };
-
     return (
-        <>
-            <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
-                {arrColombia.length > 0 ? (
-                    arrColombia.map((colombia, index) => (
-                        <div className="col-10 col-sm-8 col-lg-6" key={index}>
-                            <img
+        <div className="container">
+            {arrColombia.length > 0 ? (
+                arrColombia.map((colombia, index) => (
+                    <div className="row flex-lg-row-reverse align-items-center g-5 py-5" key={index}>
+                        <div className="col-10 col-sm-8 col-lg-6">
+                            <img 
                                 src={colombia.flags[0]} // ✅ Ahora sí tomamos la imagen del JSON
-                                className="d-block mx-lg-auto img-fluid"
-                                alt={colombia.name}
-                                width="700"
-                                height="500"
-                                loading="lazy"
-                            />
-                            <div className="col-lg-6">
-                                <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">
-                                    {colombia.name} {/* ✅ Ahora muestra "Colombia" */}
-                                </h1>
-                                <p className="lead">{colombia.description}</p> {/* ✅ Ahora muestra la descripción real */}
-                                <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                                    <button
-                                        type="button"
-                                        className="btn btn-primary btn-lg px-4 me-md-2"
-                                        onClick={() => handleShowModal(colombia)}
-                                    >
-                                        Ver más
-                                    </button>
-                                </div>
-                            </div>
+                                className="d-block mx-lg-auto img-fluid" 
+                                alt={colombia.name} 
+                                width="700" 
+                                height="500" 
+                                loading="lazy" 
+                                                            />
                         </div>
-                    ))
-                ) : (
-                    <div className="col-12 text-center">
-                        <p className="text-muted">No hay regiones disponibles en este momento.</p>
-                    </div>
-                )}
-
-            </div>
-
-            {/* Modal para mostrar detalles (opcional) */}
-            {showModal && selectedColombia && (
-                <div className="modal fade show d-block" tabIndex={-1}>
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title">{selectedColombia.name}</h5>
-                                <button type="button" className="btn-close" onClick={handleCloseModal}></button>
-                            </div>
-                            <div className="modal-body">
-                                <p>Detalles de {selectedColombia.description}</p>
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" onClick={handleCloseModal}>
-                                    Cerrar
-                                </button>
-                            </div>
+                        <div className="col-lg-6">
+                            <h1 className="mb-4 border-bottom border-primary pb-2 fs-2 textosAzul">
+                                {colombia.name} {/* ✅ Ahora muestra "Colombia" */}
+                            </h1>
+                            <p className="lead">{colombia.description}</p>
                         </div>
                     </div>
+                ))
+            ) : (
+                <div className="col-12 text-center">
+                    <p className="text-muted">No hay informacion disponibles en este momento.</p>
                 </div>
             )}
-        </>
+        </div>
     );
 };
