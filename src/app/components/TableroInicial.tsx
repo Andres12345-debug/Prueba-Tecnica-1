@@ -1,13 +1,18 @@
 import { ServicioGet } from "../../service/ServicioGet";
 import { URLS } from "../../utilities/dominios/uris";
 import { Cabecera } from "../contenedor/Cabecera";
+import { ColombiaListar } from "./Colombia/ColombiaListar";
 import { RegionesListar } from "./Regiones/RegionesListar";
+import { Sitiosistar } from "./Sitios/SitiosListar";
 export const TableroInicial =() => {
   
 
     return (
         <div>
             <Cabecera />
+            <div className="container py-5">
+                <Sitiosistar/>
+            </div>
             <div className="container py-5">
                 <RegionesListar />
             </div>

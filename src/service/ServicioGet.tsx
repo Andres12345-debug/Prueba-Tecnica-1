@@ -6,16 +6,23 @@ export class ServicioGet{
                 "Content-Type": "application/json; charset=UTF-8"
             }
         };
-
+    
         try {
+            console.log("Intentando petición a:", urlServicio);
             const response = await fetch(urlServicio, datosEnviar);
+            console.log("Respuesta recibida, status:", response.status);
+            
             if (!response.ok) {
+                console.error(`Error HTTP: ${response.status}`);
                 throw new Error(`Error HTTP: ${response.status}`);
             }
-            return await response.json();
+            
+            const data = await response.json();
+            console.log("Datos parseados:", data);
+            return data;
         } catch (error) {
-            console.error("Error en la petición GET", error);
-            return null; // Devuelve null en caso de error para manejarlo en el front
+            console.error("Error detallado en la petición GET:", error);
+            return null;
         }
     }
 }
