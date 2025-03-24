@@ -41,7 +41,7 @@ export const RegionesListar = () => {
     return (
         <>
             <div className="container mt-5">
-            <h1 className="mb-4 border-bottom border-warning pb-2 fs-2 textosAmarillo text-center">
+            <h1 className="mb-4 border-bottom border-primary pb-2 fs-2 textosAzul text-center textos fw-bold">
                     Regiones Colombianas
                 </h1>
                 {/* Publicaciones estilo Instagram */}
@@ -57,15 +57,15 @@ export const RegionesListar = () => {
                                     onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
                                 >
                                     <div className="card-body">
-                                        <p className="card-text fw-bold textosAzul">{region.name}</p>                                        
-                                        <p className="card-text">{region.description}</p>
+                                        <h4 className="fw-bold textosAzul textos">{region.name}</h4>                                        
+                                        <p className="textos">{region.description}</p>
                                     </div>
                                 </div>
                             </div>
                         ))
                     ) : (
                         <div className="col-12 text-center">
-                            <p className="text-muted">No hay regiones disponibles en este momento.</p>
+                            <p className="textos">No hay regiones disponibles en este momento.</p>
                         </div>
                     )}
                 </div>

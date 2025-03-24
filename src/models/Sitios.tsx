@@ -3,7 +3,6 @@ export class Sitios {
     public name: string;
     public description: string;
     public images: string[];
-    public cityId: number;
     public city?: { // Nuevo atributo opcional
         id: number;
         name: string;
@@ -19,7 +18,6 @@ export class Sitios {
         name: string, 
         description: string,
         images: string[],
-        cityId: number,
         city?: { 
             id: number;
             name: string;
@@ -34,7 +32,6 @@ export class Sitios {
         this.name = name;
         this.description = description; 
         this.images = images;
-        this.cityId = cityId;
         this.city = city; // Se asigna el objeto city si está presente
     }
 }
