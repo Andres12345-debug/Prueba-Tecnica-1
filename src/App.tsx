@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {TableroInicial} from './app/components/TableroInicial'
-import { Nav } from 'react-bootstrap';
+import { Nav, Spinner } from 'react-bootstrap';
 import { Cabecera } from './app/contenedor/Cabecera';
 function App() {
-  return (
-    <div className="App">
-      <TableroInicial/>      
-    </div>
-  );
+  const [loading, setLoading] = useState(true); //Para el Spinner
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000); // Simulación de carga
+}, []);
+
+return loading ? <Spinner /> : <TableroInicial />;
+
 }
 
 export default App;
