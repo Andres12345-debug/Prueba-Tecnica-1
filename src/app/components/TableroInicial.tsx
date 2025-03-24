@@ -5,14 +5,11 @@ import { ColombiaListar } from "./Colombia/ColombiaListar";
 import { DepartamentoListar } from "./Departamentos/DepartamentosListar";
 import { RegionesListar } from "./Regiones/RegionesListar";
 import { Sitiosistar } from "./Sitios/SitiosListar";
-export const TableroInicial =() => {
-  
-
+export const TableroInicial = () => {
     return (
         <div>
-            <Cabecera />
             <div className="container">
-            <ColombiaListar/>
+                <ColombiaListar />
             </div>
             <div className="container py-5">
                 <RegionesListar />
@@ -22,5 +19,5 @@ export const TableroInicial =() => {
             </div>
         </div>
     );
-    
+
 }
