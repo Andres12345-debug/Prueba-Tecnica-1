@@ -11,7 +11,7 @@ import logo from "../../assets/Img/Fondos/fondoSvg.svg"; // Importar como URL
 
 export const TableroInicial = () => {
     return (
-        <div style={{ backgroundImage: `url(${logo})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div className="jumbo">
             <div className="container">
                 <ColombiaListar />
             </div>

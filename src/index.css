@@ -141,3 +141,9 @@
 .textos{
   font-family: 'Courier New', Courier, monospace;
 }
+
+.jumbo {
+  background-image: url('./assets/Img/Fondos/inicioPagina.svg');
+  background-attachment: fixed;
+  background-size: cover;
+}
