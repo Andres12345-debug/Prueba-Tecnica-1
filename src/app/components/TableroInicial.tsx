@@ -5,17 +5,15 @@ import { ColombiaListar } from "./Colombia/ColombiaListar";
 import { DepartamentoListar } from "./Departamentos/DepartamentosListar";
 import { RegionesListar } from "./Regiones/RegionesListar";
 import { Sitiosistar } from "./Sitios/SitiosListar";
+import { ReactComponent as Logo } from "../../assets/Img/Fondos/fondo.svg";
+import logo from "../../assets/Img/Fondos/fondoSvg.svg"; // Importar como URL
+
+
 export const TableroInicial = () => {
     return (
-        <div>
+        <div style={{ backgroundImage: `url(${logo})`, backgroundSize: "cover", backgroundPosition: "center" }}>
             <div className="container">
                 <ColombiaListar />
-            </div>
-            <div className="container py-5">
-                <RegionesListar />
-            </div>
-            <div className="container py-5">
-                <DepartamentoListar />
             </div>
         </div>
     );
