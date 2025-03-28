@@ -7,12 +7,14 @@ import { RegionesListar } from "./Regiones/RegionesListar";
 import { Sitiosistar } from "./Sitios/SitiosListar";
 import { ReactComponent as Logo } from "../../assets/Img/Fondos/fondo.svg";
 import logo from "../../assets/Img/Fondos/fondoSvg.svg"; // Importar como URL
+import { Mapas } from "../../models/Mapa.s";
+import { MapasListar } from "./Mapas/MapasListar";
 
 
 export const TableroInicial = () => {
     return (
-            <div className="container">
-                <ColombiaListar />
+        <div className="container">
+            <ColombiaListar />
         </div>
     );
 

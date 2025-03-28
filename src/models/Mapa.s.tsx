@@ -1,19 +1,21 @@
-export class Colombia {
+export class Mapas{
     public id: number;
     public name: string;
     public description: string;
-    public flags: string[];
-
-    constructor(id: number,
+    public urlImages: string[];
+    
+    constructor(
+        id: number,
         name: string,
         description: string,
-        flags: []
-    ) {
+        urlImages: string[]
+    ){
         this.id = id;
         this.name = name;
         this.description = description;
-        this.flags = flags;
-
+        this.urlImages = urlImages;
     }
+    
 
+    
 }

@@ -1,19 +1,17 @@
-import { useEffect, useState } from "react";
-import { Colombia } from "../../../models/Colombia";
-import { URLS } from "../../../utilities/dominios/uris";
+import { Mapas } from "../../../models/Mapa.s";
 import { ServicioGet } from "../../../service/ServicioGet";
+import { URLS } from "../../../utilities/dominios/uris";
+import { useEffect, useState } from "react";
 
 
-export const ColombiaListar = () => {
-    // Estado para almacenar las regiones de Colombia
-    const [arrColombia, setArrColombia] = useState<Colombia[]>([]);
-    const [showModal, setShowModal] = useState(false);
-    const [selectedColombia, setSelectedColombia] = useState<Colombia | null>(null);
+export const MapasListar = () => {
 
-    // Método para consultar datos de la API
+        // Estado para almacenar las regiones de Colombia
+        const [arrMapa, setArrMapa] = useState<Mapas[]>([]);
+         // Método para consultar datos de la API
     const consultar = async () => {
         try {
-            const urlServicio = URLS.API_URL + URLS.COLOMBIA;
+            const urlServicio = URLS.API_URL + URLS.MAPAS;
             console.log("URL completa:", urlServicio);
 
             const resultado = await ServicioGet.peticionGetPublica(urlServicio);
@@ -21,39 +19,40 @@ export const ColombiaListar = () => {
 
             if (!resultado) {
                 console.error("Error: La API devolvió un valor nulo o indefinido");
-                setArrColombia([]);
+                setArrMapa([]);
                 return;
             }
 
             if (Array.isArray(resultado)) {
-                setArrColombia(resultado);
+                setArrMapa(resultado);
             } else if (typeof resultado === "object") {
-                setArrColombia([resultado]); // Envolver objeto en array si es necesario
+                setArrMapa([resultado]); // Envolver objeto en array si es necesario
             } else {
                 console.error("Error: La API devolvió un tipo de dato inesperado", resultado);
-                setArrColombia([]);
+                setArrMapa([]);
             }
 
         } catch (error) {
             console.error("Error en la petición:", error);
-            setArrColombia([]);
+            setArrMapa([]);
         }
     };
-
     useEffect(() => {
         consultar();
     }, []);
+    
+    
 
-    return (
+    return(
         <div className="container">
-            {arrColombia.length > 0 ? (
-                arrColombia.map((colombia, index) => (
+            {arrMapa.length > 0 ? (
+                arrMapa.map((mapa, index) => (
                     <div className="row flex-lg-row-reverse align-items-center" key={index}>
                         <div className="col-10 col-sm-8 col-lg-6">
                             <img 
-                                src={colombia.flags[0]} // ✅ Ahora sí tomamos la imagen del JSON
+                                src={mapa.urlImages[0]} // ✅ Ahora sí tomamos la imagen del JSON
                                 className="d-block mx-lg-auto img-fluid" 
-                                alt={colombia.name} 
+                                alt={mapa.name} 
                                 width="700" 
                                 height="500" 
                                 loading="lazy" 
@@ -61,9 +60,9 @@ export const ColombiaListar = () => {
                         </div>
                         <div className="col-lg-6">
                             <h1 className="mb-4 border-bottom border-primary pb-2 fs-2 textosAzul textos fw-bold text-center">
-                                {colombia.name} {/* ✅ Ahora muestra "Colombia" */}
+                                {mapa.name} {/* ✅ Ahora muestra "mapa" */}
                             </h1>
-                            <p className="textos">{colombia.description}</p>
+                            <p className="textos">{mapa.description}</p>
                         </div>
                     </div>
                 ))
@@ -73,5 +72,5 @@ export const ColombiaListar = () => {
                 </div>
             )}
         </div>
-    );
-};
+    )
+}

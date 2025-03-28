@@ -4,7 +4,8 @@ export const URLS = {
   REGIONES: "/api/v1/Region",
   COLOMBIA: "/api/v1/Country/Colombia",
   SITIOS: "/api/v1/TouristicAttraction",
-  DEPARTAMENTO: "/api/v1/Department"
+  DEPARTAMENTO: "/api/v1/Department",
+  MAPAS: "/api/v1/Map",
 
 
 

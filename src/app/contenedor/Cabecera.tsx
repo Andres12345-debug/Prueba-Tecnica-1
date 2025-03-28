@@ -16,7 +16,7 @@ export const Cabecera = () => {
         <ul className="nav nav-pills">
           <li className="nav-item"><NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Inicio</NavLink></li>
           <li className="nav-item"><NavLink to="/geografia" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Geografía</NavLink></li>
-          <li className="nav-item"><NavLink to="/presidentes" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Presidentes</NavLink></li>
+          <li className="nav-item"><NavLink to="/mapas" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Mapas</NavLink></li>
           <li className="nav-item"><NavLink to="/regiones" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Regiones</NavLink></li>
         </ul>
       </header>
