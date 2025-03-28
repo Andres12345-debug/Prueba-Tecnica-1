@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const Cabecera = () => {
   return (
     <div className="container p-2">
       <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <Link to="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <NavLink to="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
           <svg className="bi me-2" width="40" height="32"></svg>
           <span className="fs-2 textosAmarillo fw-bold jump textos">
             N<span className="textosAzul">ues</span><span className="textosRojos">tra </span>
@@ -12,12 +12,12 @@ export const Cabecera = () => {
               <span className="textosAmarillo">Col</span><span className="textosAzul">om</span><span className="textoRojo">bia</span>
             </span>
           </span>
-        </Link>
+        </NavLink>
         <ul className="nav nav-pills">
-          <li className="nav-item"><Link to="/" className="nav-link active">Inicio</Link></li>
-          <li className="nav-item"><Link to="/geografia" className="nav-link">Geografía</Link></li>
-          <li className="nav-item"><Link to="/presidentes" className="nav-link">Presidentes</Link></li>
-          <li className="nav-item"><Link to="/regiones" className="nav-link">Regiones</Link></li>
+          <li className="nav-item"><NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Inicio</NavLink></li>
+          <li className="nav-item"><NavLink to="/geografia" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Geografía</NavLink></li>
+          <li className="nav-item"><NavLink to="/presidentes" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Presidentes</NavLink></li>
+          <li className="nav-item"><NavLink to="/regiones" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Regiones</NavLink></li>
         </ul>
       </header>
     </div>

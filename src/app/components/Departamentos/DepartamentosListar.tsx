@@ -112,7 +112,10 @@ export const DepartamentoListar = () => {
                         <div className="mt-3" style={{ flex: 1 }}>
                            <p className="textos">{selected?.description}</p>
                            <p className="textos">Tiene una superficie de: {selected?.surface}</p>
-                           <p className="textos">Poblacion: {selected?.population}</p>                           
+                           <p className="textos">Su poblacion consta de: {selected?.population} habitantes</p> 
+                           <p className="textos">Tiene : {selected?.municipalities} municipios</p>           
+                           <p className="textos"><span className="fw-bold">Su capital:</span> {selected?.cityCapital?.description}</p>
+
                         </div>                        
                     </div>
                 </Modal.Body>

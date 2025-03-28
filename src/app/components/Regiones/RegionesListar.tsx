@@ -40,7 +40,7 @@ export const RegionesListar = () => {
 
     return (
         <>
-            <div className="container mt-5">
+            <div className="container">
             <h1 className="mb-4 border-bottom border-primary pb-2 fs-2 textosAzul text-center textos fw-bold">
                     Regiones Colombianas
                 </h1>

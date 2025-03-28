@@ -5,19 +5,22 @@ export class Departamentos{
     public surface: number;
     public population: number;
     public postalCode: string;
+    public municipalities: string;
 
     public cityCapital?: { // Nuevo atributo opcional
         id: number;
         name: string;
         description?: string;
     };
+
     constructor(
         id: number,
         name: string,
         description: string,
         surface: number,
         population: number,
-        postalCode: string       
+        postalCode: string,  
+        municipalities: string,     
     ){
         this.id=id;
         this.name = name;
@@ -25,6 +28,7 @@ export class Departamentos{
         this.surface = surface;
         this.population = population;
         this.postalCode = postalCode;
+        this.municipalities = municipalities;
         
 
 
