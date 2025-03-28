@@ -6,12 +6,9 @@ import { Sitiosistar } from "./Sitios/SitiosListar";
 
 export const TableroGeografia = () => {
     return (
-        <div>
-            <div className="container">
-                <RegionesListar />
-                <DepartamentoListar />
-
-            </div>
+        <div className="container">
+            <RegionesListar />
+            <DepartamentoListar />
         </div>
     );
 

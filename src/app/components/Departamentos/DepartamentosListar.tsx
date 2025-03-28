@@ -53,7 +53,7 @@ export const DepartamentoListar = () => {
     return (
         <>
             <div>
-            <h1 className="mb-4 border-bottom border-danger pb-2 fs-2 textosRojos text-center textos fw-bold">
+            <h1 className="mb-4 border-bottom border-danger pb-2 fs-2 textosRojos text-center textos fw-bold mt-4">
                     Departamentos Colombianos
                 </h1>
                 <div className="row row-cols-1 row-cols-md-3 mb-3 text-center textos">               

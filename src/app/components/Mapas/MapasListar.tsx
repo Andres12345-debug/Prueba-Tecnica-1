@@ -6,9 +6,25 @@ import { useEffect, useState } from "react";
 
 export const MapasListar = () => {
 
-        // Estado para almacenar las regiones de Colombia
-        const [arrMapa, setArrMapa] = useState<Mapas[]>([]);
-         // Método para consultar datos de la API
+    // Estado para almacenar las regiones de Colombia
+    const [arrMapa, setArrMapa] = useState<Mapas[]>([]);
+    //modal
+    const [showModal, setShowModal] = useState(false);
+    const [selected, setSelected] = useState<Mapas | null>(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    
+    const [currentPage, setCurrentPage] = useState(1); //PAra el paginador
+    const itemsPerPage = 3; //PAra el paginador
+
+    //PAginador
+    const totalPages = Math.ceil(arrMapa.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const selectedItems = arrMapa.slice(startIndex, startIndex + itemsPerPage);
+
+
+
+    // Método para consultar datos de la API
     const consultar = async () => {
         try {
             const urlServicio = URLS.API_URL + URLS.MAPAS;
@@ -40,37 +56,55 @@ export const MapasListar = () => {
     useEffect(() => {
         consultar();
     }, []);
-    
-    
 
-    return(
+
+
+    return (
         <div className="container">
-            {arrMapa.length > 0 ? (
-                arrMapa.map((mapa, index) => (
-                    <div className="row flex-lg-row-reverse align-items-center" key={index}>
-                        <div className="col-10 col-sm-8 col-lg-6">
-                            <img 
-                                src={mapa.urlImages[0]} // ✅ Ahora sí tomamos la imagen del JSON
-                                className="d-block mx-lg-auto img-fluid" 
-                                alt={mapa.name} 
-                                width="700" 
-                                height="500" 
-                                loading="lazy" 
-                                                            />
+            <div className="row">
+            {selectedItems.length > 0 ? (
+                selectedItems.map((mapa, index) => (
+                        <div className="col-md-4 mb-4" key={index}> {/* Añadir clave y espacio entre filas */}
+                            <div className="card shadow-sm">
+                                <img
+                                    src={mapa.urlImages[0]}
+                                    className="card-img-top"
+                                    alt={mapa.name}
+                                    style={{ height: "200px", objectFit: "cover" }} // Ajustar imagen
+                                />
+                                <div className="card-body">
+                                    <h5 className="card-title textos fw-bold">{mapa.name}</h5>
+                                    <p className="card-text textos">{mapa.description}</p>
+                                    
+                                </div>
+                            </div>
                         </div>
-                        <div className="col-lg-6">
-                            <h1 className="mb-4 border-bottom border-primary pb-2 fs-2 textosAzul textos fw-bold text-center">
-                                {mapa.name} {/* ✅ Ahora muestra "mapa" */}
-                            </h1>
-                            <p className="textos">{mapa.description}</p>
-                        </div>
+                    ))
+                ) : (
+                    <div className="col-12 text-center">
+                        <p className="text-muted">No hay información disponible en este momento.</p>
                     </div>
-                ))
-            ) : (
-                <div className="col-12 text-center">
-                    <p className="text-muted textos">No hay informacion disponibles en este momento.</p>
+                )}
+            </div>
+             {/* Controles de paginación */}
+             <div className="d-flex justify-content-center mt-3">
+                    <button
+                        className="btn btn-danger me-2"
+                        disabled={currentPage === 1}
+                        onClick={() => setCurrentPage(currentPage - 1)}
+                    >
+                        Anterior
+                    </button>
+                    <span>Página {currentPage} de {totalPages}</span>
+                    <button
+                        className="btn btn-danger ms-2"
+                        disabled={currentPage === totalPages}
+                        onClick={() => setCurrentPage(currentPage + 1)}
+                    >
+                        Siguiente
+                    </button>
                 </div>
-            )}
+            
         </div>
-    )
+    );
 }
