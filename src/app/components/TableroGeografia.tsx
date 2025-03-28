@@ -9,9 +9,8 @@ export const TableroGeografia = () => {
         <div>
             <div className="container">
                 <RegionesListar />
-            </div>
-            <div className="container mt-5">
                 <DepartamentoListar />
+
             </div>
         </div>
     );
