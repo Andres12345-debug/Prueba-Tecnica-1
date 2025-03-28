@@ -47,7 +47,7 @@ export const ColombiaListar = () => {
         <div className="container">
             {arrColombia.length > 0 ? (
                 arrColombia.map((colombia, index) => (
-                    <div className="row flex-lg-row-reverse align-items-center g-5 py-5" key={index}>
+                    <div className="row flex-lg-row-reverse align-items-center g-5" key={index}>
                         <div className="col-10 col-sm-8 col-lg-6">
                             <img 
                                 src={colombia.flags[0]} // ✅ Ahora sí tomamos la imagen del JSON

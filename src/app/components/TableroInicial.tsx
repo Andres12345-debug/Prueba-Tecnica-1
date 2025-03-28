@@ -11,10 +11,8 @@ import logo from "../../assets/Img/Fondos/fondoSvg.svg"; // Importar como URL
 
 export const TableroInicial = () => {
     return (
-        <div className="jumbo">
             <div className="container">
                 <ColombiaListar />
-            </div>
         </div>
     );
 

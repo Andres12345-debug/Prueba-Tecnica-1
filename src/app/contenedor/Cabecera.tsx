@@ -15,7 +15,7 @@ export const Cabecera = () => {
         </Link>
         <ul className="nav nav-pills">
           <li className="nav-item"><Link to="/" className="nav-link active">Inicio</Link></li>
-          <li className="nav-item"><Link to="/viaja" className="nav-link">Viaja Por Colombia</Link></li>
+          <li className="nav-item"><Link to="/geografia" className="nav-link">Geografía</Link></li>
           <li className="nav-item"><Link to="/presidentes" className="nav-link">Presidentes</Link></li>
           <li className="nav-item"><Link to="/regiones" className="nav-link">Regiones</Link></li>
         </ul>
