@@ -11,6 +11,7 @@ export const DepartamentoListar = () => {
     const [showModal, setShowModal] = useState(false);
     const [selected, setSelected] = useState<Departamentos | null>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    
 
 
     const [currentPage, setCurrentPage] = useState(1); //PAra el paginador
