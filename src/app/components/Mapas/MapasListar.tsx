@@ -136,6 +136,7 @@ export const MapasListar = () => {
                                     className="card-img-top"
                                     alt={selected?.name}
                                     style={{ height: "100%", objectFit: "cover" }} // Ajustar imagen
+                                    
                                 />
                         </div>
                     </div>
