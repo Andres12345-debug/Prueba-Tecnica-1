@@ -94,24 +94,7 @@ npm start
  Estructura del proyecto   
  ESTRUCTURA BASICA
 
-        📂 ejercicios-ts
- ├── 📂 src
- │   ├── 📂 components
- │   │   ├── 📂 basics  (Ejercicios básicos)
- │   │   │   ├── ParImpar.tsx
- │   │   │   ├── AreaCirculo.tsx
- │   │   │   ├── Factorial.tsx
- │   │   │   ├── ...
- │   │   ├── 📂 arrays (Ejercicios con arrays)
- │   │   ├── 📂 objetos (Ejercicios con objetos)
- │   │   ├── 📂 fechas (Ejercicios con fechas)
- │   │   ├── 📂 juegos (Ejercicios tipo juego)
- │   ├── 📂 pages
- │   │   ├── Home.tsx
- │   │   ├── Ejercicios.tsx
- │   ├── 📂 utils (Funciones reutilizables)
- │   ├── App.tsx
- │   ├── main.tsx
+ 
 
 #******************************#
 #******************************#
