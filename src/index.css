@@ -129,13 +129,29 @@
   
 
 .textosAmarillo{
-    color: rgb(240, 201, 4);
+    color: #ffec51;
 }
 .textosAzul{
-    color: blue;
+    color: #008bf8;
 }
 .textosRojos{
-    color: red;
+    color: #D72638;
+}
+
+.colorAmarillo{
+      background-color: #ffec51;
+}
+.colorAzul{
+      background-color: #008bf8;
+}
+.colorRojo{
+      background-color: #D72638;
+}
+.colorBlanco{
+  background-color: #F3E8EE;
+}
+.colorGris{
+  background-color: #F3F4F6;
 }
 
 .textos{

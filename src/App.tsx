@@ -23,9 +23,7 @@ const cargarComponente = ()=>{
      <ToastContainer/>
      <Cabecera></Cabecera>
           <Suspense fallback={cargarComponente()}>
-            <div className="jumbo">
             <RuteoPrincipal/>
-            </div>
      </Suspense>     
      </BrowserRouter>    
    );

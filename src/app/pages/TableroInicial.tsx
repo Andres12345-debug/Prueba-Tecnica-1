@@ -13,8 +13,11 @@ import { MapasListar } from "../components/Mapas/MapasListar";
 
 export const TableroInicial = () => {
     return (
-        <div className="container">
-            <ColombiaListar />
+        <div className=" container">
+            <div className="col-md-6 p-lg-5 mx-auto my-5 p-4"> <h1 className="fs-1 fw-bold textos">Bienvenidos a mí <span className="textosAzul">país</span></h1></div>
+            <div className="container my-5">
+                <ColombiaListar />
+            </div>
         </div>
     );
 
