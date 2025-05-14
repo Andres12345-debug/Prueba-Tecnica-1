@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-rou
 import { Spinner } from "react-bootstrap";
 import { Cabecera } from "./app/contenedor/Cabecera";
 import { ToastContainer } from 'react-toastify';
+import logo from "../src/assets/Img/Fondos/colombiaFondo.svg"; // Importar como URL
+
 import { RuteoPrincipal } from "./routes/RuteoPrincipal";
 
 const cargarComponente = ()=>{

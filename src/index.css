@@ -163,3 +163,10 @@
   background-attachment: fixed;
   background-size: cover;
 }
+
+.bienvenidaFondo{
+    background-image: url('./assets/Img/Fondos/colombiaFondo.svg');
+    background-attachment: fixed;
+  background-size: cover;
+
+}
