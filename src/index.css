@@ -154,8 +154,15 @@
   background-color: #F3F4F6;
 }
 
-.textos{
-  font-family: 'Courier New', Courier, monospace;
+.titulo{
+  font-family: 'Freckle Face', cursive;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.descripcion{
+  font-family: 'Rock Salt', cursive;
+  font-size: 1.2rem;
 }
 
 .jumbo {

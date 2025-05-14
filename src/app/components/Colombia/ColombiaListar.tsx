@@ -45,14 +45,14 @@ export const ColombiaListar = () => {
     }, []);
 
     return (
-        <div className="container">
+        <div className="container my-5">
             {arrColombia.length > 0 ? (
                 arrColombia.map((colombia, index) => (
                     <div className="row flex-lg-row-reverse align-items-center" key={index}>
                         <div className="col-10 col-sm-8 col-lg-6">
                             <img 
                                 src={colombia.flags[0]} // ✅ Ahora sí tomamos la imagen del JSON
-                                className="d-block mx-lg-auto img-fluid" 
+                                className="d-block mx-lg-auto img-fluid rounded-4 shadow-lg" 
                                 alt={colombia.name} 
                                 width="700" 
                                 height="500" 
@@ -60,16 +60,16 @@ export const ColombiaListar = () => {
                                                             />
                         </div>
                         <div className="col-lg-6">
-                            <h1 className="mb-4 border-bottom border-primary pb-2 fs-2 textosAzul textos fw-bold text-center">
+                            <h1 className="mb-4 border-bottom border-primary pb-2 textosAzul titulo text-center">
                                 {colombia.name} {/* ✅ Ahora muestra "Colombia" */}
                             </h1>
-                            <p className="textos">{colombia.description}</p>
+                            <p className="descripcion">{colombia.description}</p>
                         </div>
                     </div>
                 ))
             ) : (
                 <div className="col-12 text-center">
-                    <p className="text-muted textos">No hay informacion disponibles en este momento.</p>
+                    <p className="text-muted descipcion">No hay informacion disponibles en este momento.</p>
                 </div>
             )}
         </div>
