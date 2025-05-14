@@ -60,7 +60,7 @@ export const ColombiaListar = () => {
                                                             />
                         </div>
                         <div className="col-lg-6">
-                            <h1 className="mb-4 border-bottom border-primary pb-2 textosAzul titulo text-center">
+                            <h1 className="mb-4 border-bottom border-primary textosAzul titulo">
                                 {colombia.name} {/* ✅ Ahora muestra "Colombia" */}
                             </h1>
                             <p className="descripcion">{colombia.description}</p>

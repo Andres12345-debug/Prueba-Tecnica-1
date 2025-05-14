@@ -129,7 +129,7 @@
   
 
 .textosAmarillo{
-    color: #ffec51;
+    color: #ffef16;
 }
 .textosAzul{
     color: #008bf8;
@@ -139,7 +139,7 @@
 }
 
 .colorAmarillo{
-      background-color: #ffec51;
+      background-color: #ffef16;
 }
 .colorAzul{
       background-color: #008bf8;
@@ -151,8 +151,22 @@
   background-color: #F3E8EE;
 }
 .colorGris{
-  background-color: #F3F4F6;
+  background-color: #8c8c8c;
 }
+.colorNegro{
+  background-color: #00184e;
+}
+
+/* Teléfonos medianos (de 577px a 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .titulo {
+  font-size: 1.5rem;
+  }
+  .descripcion {
+    font-size: 1rem;
+  }
+}
+
 
 .titulo{
   font-family: 'Freckle Face', cursive;
