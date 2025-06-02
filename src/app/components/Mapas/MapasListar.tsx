@@ -74,7 +74,7 @@ export const MapasListar = () => {
 
 
     return (
-        <div className="container">
+        <div className="container my-5">
             <div className="row">
                 {selectedItems.length > 0 ? (
                     selectedItems.map((mapa, index) => (
@@ -91,8 +91,8 @@ export const MapasListar = () => {
                                     style={{ height: "200px", objectFit: "cover" }} // Ajustar imagen
                                 />
                                 <div className="card-body">
-                                    <h5 className="card-title textos fw-bold">{mapa.name}</h5>
-                                    <p className="card-text textos">{mapa.description}</p>
+                                    <h5 className="card-title descripcion fw-bold">{mapa.name}</h5>
+                                    <p className="card-text descripcion">{mapa.description}</p>
 
                                 </div>
                             </div>
@@ -100,7 +100,7 @@ export const MapasListar = () => {
                     ))
                 ) : (
                     <div className="col-12 text-center">
-                        <p className="text-muted">No hay información disponible en este momento.</p>
+                        <p className="descripcion">No hay información disponible en este momento.</p>
                     </div>
                 )}
             </div>

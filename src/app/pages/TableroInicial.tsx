@@ -20,10 +20,14 @@ export const TableroInicial = () => {
                         <img src={logo} alt="Logo" height="500" className="d-block mx-lg-auto img-fluid rounded-4 shadow-lg" loading="lazy" />
                     </div>
                     <div className="col-lg-6">
-                        <h1 className="titulo textosAzul lh-1 mb-3 border-bottom border-primary pb-2">Colombia es una chimba <span className="textosRojos">parce !</span></h1>
+                        <h1 className="titulo lh-1 mb-3 border-bottom border-primary pb-2">Colombia es una chimba <span className="textosRojos">parce !</span></h1>
                         <p className="descripcion">Colombia es una tierra llena de magia, cultura y gente increíble. Desde los paisajes espectaculares de la Sierra Nevada hasta las vibrantes calles de Medellín, cada rincón tiene su propio encanto.
                             Tenemos una gastronomía brutal—¿quién le dice no a una buena bandeja paisa o a unas empanadas con ají picante? Ni hablar de la música, porque el vallenato, la salsa y el reggaetón nos ponen a bailar en cualquier ocasión. Y lo mejor, la calidez de la gente, que siempre recibe con una sonrisa y un buen parche.
-                        </p> <div className="d-grid gap-2 d-md-flex justify-content-md-start"> <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">Primary</button> <button type="button" className="btn btn-outline-secondary btn-lg px-4">Default</button> </div> </div> </div> </div>
+                        </p> <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+                        </div>
+                    </div>
+                </div>
+            </div>
             <ColombiaListar />
         </div>
     );

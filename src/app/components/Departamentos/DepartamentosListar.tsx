@@ -11,7 +11,7 @@ export const DepartamentoListar = () => {
     const [showModal, setShowModal] = useState(false);
     const [selected, setSelected] = useState<Departamentos | null>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
-    
+
 
 
     const [currentPage, setCurrentPage] = useState(1); //PAra el paginador
@@ -53,26 +53,26 @@ export const DepartamentoListar = () => {
 
     return (
         <>
-            <div>
-            <h1 className="mb-4 border-bottom border-danger pb-2 fs-2 textosRojos text-center textos fw-bold mt-4">
+            <div className="container my-5">
+                <h1 className="mb-4 border-bottom border-danger pb-2 titulo text-center fw-bold mt-4">
                     Departamentos Colombianos
                 </h1>
-                <div className="row row-cols-1 row-cols-md-3 mb-3 text-center textos">               
+                <div className="row row-cols-1 row-cols-md-3 mb-3 text-center descripcion">
                     {selectedItems.length > 0 ? (
                         selectedItems.map((departamento, index) => (
                             <div className="col" key={index}
-                            onClick={() => handleShowModal(departamento)}
-                            style={{ cursor: "pointer" }}                            
-                            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.02)")}
-                            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}>
+                                onClick={() => handleShowModal(departamento)}
+                                style={{ cursor: "pointer" }}
+                                onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.02)")}
+                                onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}>
                                 <div className="card mb-4 rounded-3 shadow-sm">
                                     <div className="card-header py-3">
-                                        <h4 className="my-0 fw-normal textosRojos fw-bold">{departamento.name}</h4>
+                                        <h4 className="my-0 descripcion fw-bold">{departamento.name}</h4>
                                     </div>
                                     <div className="card-body">
                                         <ul className="list-unstyled mt-3 mb-4">
                                             <li>{departamento.description}</li>
-                                            <li className="lead textosRojos">Capital: {departamento.cityCapital?.name || "Ciudad desconocida"}</li>
+                                            <li className="lead descripcion">Capital: {departamento.cityCapital?.name || "Ciudad desconocida"}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@ export const DepartamentoListar = () => {
                         ))
                     ) : (
                         <div className="col-12 text-center">
-                            <p className="textos">No hay regiones disponibles en este momento.</p>
+                            <p className="descripcion">No hay regiones disponibles en este momento.</p>
                         </div>
                     )}
                 </div>
@@ -103,21 +103,21 @@ export const DepartamentoListar = () => {
                     </button>
                 </div>
             </div>
-             {/* Modal para mostrar los detalles de la región */}
-             <Modal show={showModal} onHide={handleCloseModal} size="xl">
+            {/* Modal para mostrar los detalles de la región */}
+            <Modal show={showModal} onHide={handleCloseModal} size="xl">
                 <Modal.Header closeButton>
                     <Modal.Title>{selected?.name}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div className="d-flex flex-column flex-md-row align-items-start">
                         <div className="mt-3" style={{ flex: 1 }}>
-                           <p className="textos">{selected?.description}</p>
-                           <p className="textos">Tiene una superficie de: {selected?.surface}</p>
-                           <p className="textos">Su poblacion consta de: {selected?.population} habitantes</p> 
-                           <p className="textos">Tiene : {selected?.municipalities} municipios</p>           
-                           <p className="textos"><span className="fw-bold">Su capital:</span> {selected?.cityCapital?.description}</p>
+                            <p className="descripcion">{selected?.description}</p>
+                            <p className="descripcion">Tiene una superficie de: {selected?.surface}</p>
+                            <p className="descripcion">Su poblacion consta de: {selected?.population} habitantes</p>
+                            <p className="descripcion">Tiene : {selected?.municipalities} municipios</p>
+                            <p className="descripcion"><span className="fw-bold">Su capital:</span> {selected?.cityCapital?.description}</p>
 
-                        </div>                        
+                        </div>
                     </div>
                 </Modal.Body>
                 <Modal.Footer>

@@ -40,8 +40,8 @@ export const RegionesListar = () => {
 
     return (
         <>
-            <div className="container">
-            <h1 className="mb-4 border-bottom border-primary pb-2 fs-2 textosAzul text-center textos fw-bold">
+            <div className="container my-5">
+                <h1 className="mb-4 border-bottom border-primary pb-2 text-center titulo">
                     Regiones Colombianas
                 </h1>
                 {/* Publicaciones estilo Instagram */}
@@ -50,22 +50,22 @@ export const RegionesListar = () => {
                     {arrRegiones.length > 0 ? (
                         arrRegiones.map((region, index) => (
                             <div className="col-md-4" key={index}>
-                                <div className="card shadow-sm bg-secondary-subtle" 
+                                <div className="card shadow-sm bg-secondary-subtle"
                                     style={{ cursor: "pointer" }}
                                     onClick={() => handleShowModal(region)}
                                     onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.02)")}
                                     onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
                                 >
                                     <div className="card-body">
-                                        <h4 className="fw-bold textosAzul textos">{region.name}</h4>                                        
-                                        <p className="textos">{region.description}</p>
+                                        <h4 className="fw-bold textosAzul descripcion">{region.name}</h4>
+                                        <p className="descripcion">{region.description}</p>
                                     </div>
                                 </div>
                             </div>
                         ))
                     ) : (
                         <div className="col-12 text-center">
-                            <p className="textos">No hay regiones disponibles en este momento.</p>
+                            <p className="descripcion">No hay regiones disponibles en este momento.</p>
                         </div>
                     )}
                 </div>
@@ -80,7 +80,7 @@ export const RegionesListar = () => {
                     <div className="d-flex flex-column flex-md-row align-items-start">
                         <div className="mt-3" style={{ flex: 1 }}>
                             {selectedRegion?.description && (
-                                <p className="mb-2"><strong>Descripción:</strong> {selectedRegion.description}</p>                                
+                                <p className="mb-2"><strong>Descripción:</strong> {selectedRegion.description}</p>
                             )}
                         </div>
                     </div>
