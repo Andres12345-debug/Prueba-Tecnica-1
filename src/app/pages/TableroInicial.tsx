@@ -9,6 +9,7 @@ import logo from "../../assets/Img/Contenidos/logoColombia.svg";
 import { Mapas } from "../../models/Mapa.s";
 import { MapasListar } from "../components/Mapas/MapasListar";
 import { url } from "inspector";
+import { MonedaListar } from "../components/Moneda/ModendaListar";
 
 
 export const TableroInicial = () => {
@@ -29,6 +30,7 @@ export const TableroInicial = () => {
                 </div>
             </div>
             <ColombiaListar />
+            <MonedaListar></MonedaListar>
         </div>
     );
 

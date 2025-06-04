@@ -1,14 +1,14 @@
-export class ServicioGet{
+export class ServicioGetMoneda {
     public static async peticionGetPublica(urlServicio: string): Promise<any> {
+        // 👇 Eliminamos "Content-Type"
         const datosEnviar = {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json; charset=UTF-8"
-            }
+            method: "GET"
         };
     
         try {
+            console.log("Intentando petición a:", urlServicio);
             const response = await fetch(urlServicio, datosEnviar);
+            console.log("Respuesta recibida, status:", response.status);
             
             if (!response.ok) {
                 console.error(`Error HTTP: ${response.status}`);
@@ -16,6 +16,7 @@ export class ServicioGet{
             }
             
             const data = await response.json();
+            console.log("Datos parseados:", data);
             return data;
         } catch (error) {
             console.error("Error detallado en la petición GET:", error);
