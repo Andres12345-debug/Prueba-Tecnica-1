@@ -10,6 +10,7 @@ import { Mapas } from "../../models/Mapa.s";
 import { MapasListar } from "../components/Mapas/MapasListar";
 import { url } from "inspector";
 import { MonedaListar } from "../components/Moneda/ModendaListar";
+import { Carrucel } from "../contenedor/Carrucel";
 
 
 export const TableroInicial = () => {
@@ -31,6 +32,9 @@ export const TableroInicial = () => {
             </div>
             <ColombiaListar />
             <MonedaListar></MonedaListar>
+            <div className="container my-5">
+                <Carrucel></Carrucel>
+            </div>
         </div>
     );
 
