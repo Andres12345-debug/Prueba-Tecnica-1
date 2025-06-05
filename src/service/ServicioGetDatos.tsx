@@ -1,4 +1,4 @@
-export class ServicioGetMoneda {
+export class ServicioGetDatos {
     public static async peticionGetPublica(urlServicio: string): Promise<any> {
         // 👇 Eliminamos "Content-Type"
         const datosEnviar = {

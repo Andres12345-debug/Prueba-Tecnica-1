@@ -7,7 +7,7 @@ export const URLS = {
   DEPARTAMENTO: "/api/v1/Department",
   MAPAS: "/api/v1/Map",
 
-  API_DATOS_URL: "https://api.exchangerate.host/list?access_key=77efc8551c8790aecc021ba523986aa0"
+  API_DATOS_URL: "https://api.open-meteo.com/v1/forecast?latitude=4.6097&longitude=-74.0817&current_weather=true"
 
 
 
