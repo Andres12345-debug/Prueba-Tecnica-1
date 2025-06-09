@@ -38,7 +38,7 @@ export const DatosListar = () => {
     <div className="container my-5">
       <h2 className="mb-4 titulo"><span className="textosAmarillo">Temperatura</span> Actual en <span className="textosRojos">Bogotá</span></h2>
 
-      {error && <div className="alert alert-danger textos">{error}</div>}
+      {error && <div className="alert alert-danger textos shadow-lg">{error}</div>}
 
       {temperatura !== null ? (
         <div className="alert alert-success textos">

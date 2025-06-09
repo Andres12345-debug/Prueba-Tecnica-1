@@ -11,6 +11,7 @@ import { MapasListar } from "../components/Mapas/MapasListar";
 import { url } from "inspector";
 import { DatosListar } from "../components/Moneda/DatosListar";
 import { Carrucel } from "../contenedor/Carrucel";
+import { HoraColombia } from "../components/Hora/Hora";
 
 
 export const TableroInicial = () => {
@@ -32,6 +33,7 @@ export const TableroInicial = () => {
             </div>
             <ColombiaListar />
             <DatosListar></DatosListar>
+            <HoraColombia></HoraColombia>
             <div className="container my-5">
                 <Carrucel></Carrucel>
             </div>
